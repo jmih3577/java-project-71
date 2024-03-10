@@ -40,8 +40,8 @@ class AppTest {
                   -setting3: true
                   +setting3: none
                 }""";
-        var actual = Differ.generate("/home/dev/projects/java-project-71/app/src/test/resources/complexjson1.json",
-                "/home/dev/projects/java-project-71/app/src/test/resources/complexjson2.json", "stylish");
+        var actual = Differ.generate(System.getProperty("user.dir") + "/src/test/resources/complexjson1.json",
+                System.getProperty("user.dir") + "/src/test/resources/complexjson2.json", "stylish");
 
         assertEquals(expect,
                 actual);
@@ -74,8 +74,8 @@ class AppTest {
                   -setting3: true
                   +setting3: none
                 }""";
-        var actual = Differ.generate("./src/test/resources/complexjson1.json",
-                "./src/test/resources/complexjson2.json", "stylish");
+        var actual = Differ.generate(System.getProperty("user.dir") + "/src/test/resources/complexjson1.json",
+                System.getProperty("user.dir") + "/src/test/resources/complexjson2.json", "stylish");
 
         assertEquals(expect,
                 actual);
@@ -108,8 +108,8 @@ class AppTest {
                   -setting3: true
                   +setting3: none
                 }""";
-        var actual = Differ.generate("/home/dev/projects/java-project-71/app/src/test/resources/complexyaml1.yml",
-                "/home/dev/projects/java-project-71/app/src/test/resources/complexyaml2.yml", "stylish");
+        var actual = Differ.generate(System.getProperty("user.dir") + "/src/test/resources/complexyaml1.yml",
+                System.getProperty("user.dir") + "/src/test/resources/complexyaml2.yml", "stylish");
 
         assertEquals(expect,
                 actual);
@@ -142,8 +142,8 @@ class AppTest {
                   -setting3: true
                   +setting3: none
                 }""";
-        var actual = Differ.generate("./src/test/resources/complexyaml1.yml",
-                "./src/test/resources/complexyaml2.yml", "stylish");
+        var actual = Differ.generate(System.getProperty("user.dir") + "/src/test/resources/complexyaml1.yml",
+                System.getProperty("user.dir") + "/src/test/resources/complexyaml2.yml", "stylish");
 
         assertEquals(expect,
                 actual);
@@ -164,8 +164,8 @@ class AppTest {
                     Property 'setting1' was updated. From 'Some value' to 'Another value'
                     Property 'setting2' was updated. From 200 to 300
                     Property 'setting3' was updated. From true to 'none'""";
-        var actual = Differ.generate("./src/test/resources/complexjson1.json",
-                "./src/test/resources/complexjson2.json", "plain");
+        var actual = Differ.generate(System.getProperty("user.dir") + "/src/test/resources/complexjson1.json",
+                System.getProperty("user.dir") + "/src/test/resources/complexjson2.json", "plain");
 
         assertEquals(expect,
                 actual);
@@ -186,8 +186,8 @@ class AppTest {
                     Property 'setting1' was updated. From 'Some value' to 'Another value'
                     Property 'setting2' was updated. From 200 to 300
                     Property 'setting3' was updated. From true to 'none'""";
-        var actual = Differ.generate("./src/test/resources/complexyaml1.yml",
-                "./src/test/resources/complexyaml2.yml", "plain");
+        var actual = Differ.generate(System.getProperty("user.dir") + "/src/test/resources/complexyaml1.yml",
+                System.getProperty("user.dir") + "/src/test/resources/complexyaml2.yml", "plain");
 
         assertEquals(expect,
                 actual);
@@ -196,8 +196,8 @@ class AppTest {
     public void bothRelativePathJSONFormatJSON() throws Exception {
         Path path = Paths.get("./src/test/resources/jsonexpect.txt");
         String expect = Files.readAllLines(path).get(0);
-        var actual = Differ.generate("./src/test/resources/complexjson1.json",
-                "./src/test/resources/complexjson2.json", "json");
+        var actual = Differ.generate(System.getProperty("user.dir") + "/src/test/resources/complexjson1.json",
+                System.getProperty("user.dir") + "/src/test/resources/complexjson2.json", "json");
 
         assertEquals(expect,
                 actual);
@@ -206,8 +206,8 @@ class AppTest {
     public void bothRelativePathYAMLFormatJSON() throws Exception {
         Path path = Paths.get("./src/test/resources/jsonexpect.txt");
         String expect = Files.readAllLines(path).get(0);
-        var actual = Differ.generate("./src/test/resources/complexyaml1.yml",
-                "./src/test/resources/complexyaml2.yml", "json");
+        var actual = Differ.generate(System.getProperty("user.dir") + "/src/test/resources/complexyaml1.yml",
+                System.getProperty("user.dir") + "/src/test/resources/complexyaml2.yml", "json");
         assertEquals(expect,
                 actual);
     }
