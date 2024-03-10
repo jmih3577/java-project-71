@@ -204,7 +204,7 @@ class AppTest {
     }
     @Test
     public void bothRelativePathYAMLFormatJSON() throws Exception {
-        Path path = Paths.get("./src/test/resources/jsonexpect.txt");
+        Path path = Paths.get(System.getProperty("user.dir") + "/src/test/resources/jsonexpect.txt");
         String expect = Files.readAllLines(path).get(0);
         var actual = Differ.generate(System.getProperty("user.dir") + "/src/test/resources/complexyaml1.yml",
                 System.getProperty("user.dir") + "/src/test/resources/complexyaml2.yml", "json");
