@@ -23,7 +23,7 @@ public class Plain {
                         getComplexValueType(list.get(1))));
             } else if (list.get(2) == Parser.MapOperations.DEL) {
                 sb.append(String.format(
-                        "Property '%1$s' was removed.\n",
+                        "Property '%1$s' was removed\n",
                         key));
             } else {
                 sb.append(String.format(
