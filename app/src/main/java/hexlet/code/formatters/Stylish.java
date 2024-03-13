@@ -15,14 +15,14 @@ public class Stylish {
         for (var key : keySetDiff) {
             List list = (List) diffMap.get(key);
             if (list.get(2) == Parser.MapOperations.SAME) {
-                sb.append("  ").append(key).append(": ").append(list.get(0)).append("\n");
+                sb.append("    ").append(key).append(": ").append(list.get(0)).append("\n");
             } else if (list.get(2) == Parser.MapOperations.CHNG) {
-                sb.append("  ").append("-").append(key).append(": ").append(list.get(0)).append("\n");
-                sb.append("  ").append("+").append(key).append(": ").append(list.get(1)).append("\n");
+                sb.append("  ").append("- ").append(key).append(": ").append(list.get(0)).append("\n");
+                sb.append("  ").append("+ ").append(key).append(": ").append(list.get(1)).append("\n");
             } else if (list.get(2) == Parser.MapOperations.DEL) {
-                sb.append("  ").append("-").append(key).append(": ").append(list.get(0)).append("\n");
+                sb.append("  ").append("- ").append(key).append(": ").append(list.get(0)).append("\n");
             } else {
-                sb.append("  ").append("+").append(key).append(": ").append(list.get(1)).append("\n");
+                sb.append("  ").append("+ ").append(key).append(": ").append(list.get(1)).append("\n");
             }
         }
         sb.append("}");
