@@ -10,8 +10,8 @@ import java.nio.file.Paths;
 import java.util.*;*/
 
 public class Differ {
-    public static Object mapOperations;
-    private static String diffResult;
+    //public static Object mapOperations;
+    //private static String diffResult;
     public static String generate(String fp1, String fp2, String format)  throws Exception {
         return Formatter.format(Parser.parse(fp1, fp2), format);
     }
